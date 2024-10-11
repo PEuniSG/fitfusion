@@ -1,0 +1,42 @@
+<div id="edit-profile" v-cloak>
+  <account-notification-banner></account-notification-banner>
+  <div class="container pt-5 pb-5">
+    <h1>Ändern Sie Ihre Profildaten</h1>
+    <hr />
+    <form action="/updateProfile" method="POST">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="full-name">Vollständiger Name</label>
+            <input class="form-control" id="full-name" name="fullName" type="text" placeholder="Sturgis P. Sturgeon"
+              autocomplete="name" focus-first value="<%= req.me.fullName %>">
+            <div class="invalid-feedback">Bitte den vollständigen Namen eingeben</div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="email-address">E-Mail-Addresse</label>
+            <input class="form-control" id="email-address" name="emailAddress" type="email"
+              placeholder="sturgeon@beispiel.com" autocomplete="email" value="<%= req.me.emailAddress %>">
+            <div class="invalid-feedback">Bitte eine valide E-Mail-Adresse eingeben</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          Es existiert bereits ein Account mit dieser E-Mail-Adresse.
+        </div>
+        <div class="col-sm-6  mt-2">
+          <div class="form-group text-right">
+
+            <a class="btn btn-outline-warning" href="/account">Abbrechen</a>
+            <input class="btn btn-outline-dark" type="submit" value="Änderungen speichern">
+
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

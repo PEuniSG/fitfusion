@@ -1,0 +1,66 @@
+<div class="container">
+  <div id="signup">
+    <div class="container-fluid pt-5 pb-5">
+      <h1 class="text-center">Account erstellen</h1>
+      <div style="max-width: 450px;" class="mx-auto">
+        <p class="text-center">Die Mitgliedschaft ist kostenlos und die Registrierung dauert nur wenige Minuten.</p>
+        <hr />
+        <form action="signup" method="POST" onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="full-name">Vollständiger Name</label>
+            <input class="form-control" id="full-name" name="fullName" type="text" placeholder="Max Mustermann"
+              autocomplete="name" focus-first required>
+            <div class="invalid-feedback">Bitte tragen Sie Ihren vollen Namen ein.</div>
+          </div>
+          <div class="form-group">
+            <label for="email-address">E-Mail-Addresse</label>
+            <input class="form-control" id="emaila-address" name="emailAddress" type="email"
+              placeholder="max.mustermann@example.com" autocomplete="email" required>
+            <div class="invalid-feedback">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Wählen Sie ein Passwort</label>
+            <input class="form-control" id="password" name="password" type="password" placeholder="••••••••••••••"
+              autocomplete="new-password" required>
+            <div class="invalid-feedback">Bitte Passwort eingeben.</div>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Passwort bestätigen</label>
+            <input class="form-control" id="confirm-password" name="confirmPassword" type="password"
+              placeholder="••••••••••••••" autocomplete="new-password" required>
+            <div class="invalid-feedback">Die beiden Passwörter stimmen nicht überein.</div>
+          </div>
+          <div class="form-group form-check">
+            <input class="form-check-input" id="terms-agreement" name="termsAgreement" type="checkbox"
+              v-model="formData.agreed">
+            <label for="terms-agreement" class="form-check-label">Ich habe die <a target="_blank" href="/terms">AGB</a>
+              gelesen &amp; und stimme ihnen zu.</label>
+          </div>
+          <div class="form-group">
+            <br>
+            <input class="btn btn-dark btn-sm active" type="submit" value="Benutzerkonto erstellen">
+
+          </div>
+          </ajax>
+          <br>
+          <p class="text-center">Sie besitzen ein Konto? <a href="/loginpage">Anmelden</a></p>
+      </div>
+    </div>
+  </div>
+  <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+</div>
+
+<script>
+  function validateForm() {
+    let password = document.querySelector("#password").value;
+    let confirmPassword = document.querySelector("#confirm-password").value;
+
+    if (password !== confirmPassword) {
+      // Die Passwörter stimmen nicht überein
+      document.querySelector("#confirm-password").classList.add("is-invalid");
+      return false;
+    }
+
+    return true;
+  }
+</script>

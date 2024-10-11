@@ -1,0 +1,70 @@
+<div class="container">
+
+    <div class="d-flex p-2 bd-highlight">
+        <h1>Fitnessplan erstellen</h1>
+    </div>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-dark">
+            <a href="/fitnessplan/" class="btn btn-dark btn-lg active" role="button"
+                aria-pressed="true">Fitnesspläne</a>
+            <a href="/fitnessplan/newFitnessplan" class="btn btn-dark btn-lg active" role="button"
+                aria-pressed="true">Fitnessplan erstellen</a>
+            <a href="/category" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien
+                verwalten</a>
+        </div>
+
+    </div>
+
+    <div>
+        <form action="/fitnessplan" id="fitnessplanForm" method="post" onsubmit="return validateFitnessplanForm()">
+
+            <div class="form-group">
+                <label class="col-form-label-lg required">Name</label>
+                <input type="text" class="form-control" maxlength="80" name="name">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Anzahl Übungen</label>
+                <select class="form-control" id="anzahlÜbungen" name="amountExercises">
+                    <option value="choose">bitte auswählen</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label-lg required">Beschreibung</label>
+                <input type="text" maxlength="255" class="form-control" name="description">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Übung 1</label>
+                <input type="text" class="form-control" maxlength="80" name="exerciseOne">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Übung 2</label>
+                <input type="text" maxlength="255" class="form-control" name="exerciseTwo">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Übung 3</label>
+                <input type="text" maxlength="255" class="form-control" name="exerciseThree">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Kategorie</label>
+                <select class="form-control" name="category">
+                    <% categories.forEach(function(category){ %>
+                        <option value="<%= category.id %>">
+                            <%= category.name %>
+                        </option>
+                        <% }); %>
+                </select>
+            </div>
+            <br>
+            <div>
+                <input class="btn btn-dark btn-lg active" type="submit" value="Hinzufügen">
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>

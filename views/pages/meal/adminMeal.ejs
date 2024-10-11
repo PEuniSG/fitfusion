@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="d-flex p-2 bd-highlight">
+    <h1>Mahlzeiten</h1>
+  </div>
+
+  <div class="d-flex flex-row-reverse bd-highlight">
+    <div class="p-2 bd-dark">
+      <a href="/meal/" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Mahlzeiten</a>
+      <a href="/meal/newMeal" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Mahlzeiten
+        erstellen</a>
+      <a href="/categoryMeal" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien
+        verwalten</a>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+  <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+    <form action="/meal" class="form mb-3">
+      <label>Suche</label>
+      <input type="text" value="" length="20" name="q">
+      <button class="btn btn-outline-dark btn-sm" type="submit">Suche</button>
+    </form>
+    <form action="/meal" class="form mb-3">
+      <label>Filter</label>
+      <button class="btn btn-outline-dark btn-sm" value="High protein" type="text" name="q">High protein</button>
+      <button class="btn btn-outline-dark btn-sm" value="Low fat" type="text" name="q">Low fat</button>
+      <button class="btn btn-outline-dark btn-sm" value="Low carbs" type="text" name="q">Low carbs</button>
+      <button class="btn btn-outline-dark btn-sm" value="" type="text" name="q">Filter löschen</button>
+    </form>
+  </div>
+  <div class="item-content">
+    <table class="table">
+      <thead>
+        <th>Name der Mahlzeit</th>
+        <th>Beschreibung</th>
+        <th>Kategorie</th>
+
+      </thead>
+      <tbody>
+        <% meals.forEach(function(meal){ %>
+          <tr>
+            <td>
+              <%= meal.name %>
+            </td>
+            <td>
+              <%= meal.description %>
+            </td>
+            <td>
+              <% if(meal.categoryMeal) { %>
+                <%= meal.categoryMeal.name %>
+                  <% } %>
+
+            </td>
+            <td> <a class="btn btn-outline-dark" href="/meal/<%= meal.id %>">anzeigen</a></td>
+            <td> <a class="btn btn-outline-dark" href="/meal/<%= meal.id %>/delete">löschen</a></td>
+            <td> <a class="btn btn-outline-dark" href="/meal/<%= meal.id %>/edit">ändern</a></td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- <div class="plan" style="width: 18rem;">
+        <img src="images/FitnessplanWallpaper.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div> -->

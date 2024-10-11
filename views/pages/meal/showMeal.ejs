@@ -1,0 +1,86 @@
+<div class="container">
+    <h1>
+        Meal "<%= meal.name %>"anzeigen
+    </h1>
+
+
+    <div class="card w-100 mt-4">
+        <div>
+            <div class="row">
+                <div class="col-2">
+                    Name
+                </div>
+                <div class="col-10">
+                    <%= meal.name %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Beschreibung
+                </div>
+                <div class="col-10">
+                    <%= meal.description %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Protein
+                </div>
+                <div class="col-10">
+                    <%= meal.protein %> g
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Kalorien
+                </div>
+                <div class="col-10">
+                    <%= meal.calories %> kcal
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Fett
+                </div>
+                <div class="col-10">
+                    <%= meal.fat %> g
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Zutat 1
+                </div>
+                <div class="col-10">
+                    <%= meal.ingredientOne %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Zutat 2
+                </div>
+                <div class="col-10">
+                    <%= meal.ingredientTwo %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Zutat 3
+                </div>
+                <div class="col-10">
+                    <%= meal.ingredientThree %>
+                </div>
+            </div>
+
+            <% if(meal.categoryMeal) { %>
+                <div class="row">
+                    <div class="col-2">
+                        Kategorie
+                    </div>
+                    <div class="col-10">
+                        <%= meal.categoryMeal.name %>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</div>

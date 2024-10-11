@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="d-flex p-2 bd-highlight">
+    <h1>Fitnesspläne</h1>
+  </div>
+  <div class="d-flex flex-row-reverse bd-highlight">
+    <div class="p-2 bd-dark">
+      <a href="/fitnessplan/" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Fitnesspläne</a>
+      <a href="/fitnessplan/newFitnessplan" class="btn btn-dark btn-lg active" role="button"
+        aria-pressed="true">Fitnessplan erstellen</a>
+      <a href="/category" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien verwalten</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+    <form action="/fitnessplan" class="form mb-3">
+      <label>Suche</label>
+      <input type="text" value="" length="20" name="q">
+      <button class="btn btn-outline-dark btn-sm" type="submit">Suche</button>
+    </form>
+    <form action="/fitnessplan" class="form mb-3">
+      <label>Filter</label>
+      <button class="btn btn-outline-dark btn-sm" value="Brust" type="text" name="q">Brust</button>
+      <button class="btn btn-outline-dark btn-sm" value="Rücken" type="text" name="q">Rücken</button>
+      <button class="btn btn-outline-dark btn-sm" value="Bein" type="text" name="q">Beine</button>
+      <button class="btn btn-outline-dark btn-sm" value="" type="text" name="q">Filter löschen</button>
+    </form>
+  </div>
+  <div class="item-content">
+    <table class="table">
+      <thead>
+        <th>Name des Fitnessplans</th>
+        <th>Beschreibung</th>
+        <th>Kategorie</th>
+      </thead>
+      <tbody>
+        <% fitnessplans.forEach(function(fitnessplan){ %>
+          <tr>
+            <td>
+              <%= fitnessplan.name %>
+            </td>
+            <td>
+              <%= fitnessplan.description %>
+            </td>
+            <td>
+              <% if(fitnessplan.category) { %>
+                <%= fitnessplan.category.name %>
+                  <% } %>
+            </td>
+            <td> <a class="btn btn-outline-dark" href="/fitnessplan/<%= fitnessplan.id %>">anzeigen</a></td>
+            <td> <a class="btn btn-outline-dark" href="/fitnessplan/<%= fitnessplan.id %>/delete">löschen</a></td>
+            <td> <a class="btn btn-outline-dark" href="/fitnessplan/<%= fitnessplan.id %>/edit">ändern</a></td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>

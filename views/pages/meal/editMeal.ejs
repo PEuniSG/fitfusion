@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="d-flex p-2 bd-highlight">
+        <h1>Mahlzeit bearbeiten</h1>
+    </div>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-dark">
+            <a href="/meal/" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Mahlzeiten</a>
+            <a href="/meal/newMeal" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Mahlzeiten
+                erstellen</a>
+            <a href="/categoryMeal" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien
+                verwalten</a>
+        </div>
+
+    </div>
+    <div>
+        <form action="/meal/<%=meal.id%>/update" method="post">
+            <div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Name</label>
+                    <input type="text" class="form-control" maxlength="80" value="<%= meal.name %>" name="name">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Beschreibung</label>
+                    <input type="text" maxlength="255" class="form-control" size="40" value="<%= meal.description %>"
+                        name="description">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Protein</label>
+                    <input type="text" maxlength="255" class="form-control" size="40" value="<%= meal.protein %>"
+                        name="exerciseOne">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Kalorien</label>
+                    <input type="text" maxlength="255" class="form-control" size="40" value="<%= meal.calories %>"
+                        name="exerciseTwo">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Fett</label>
+                    <input type="text" maxlength="255" class="form-control" size="40" value="<%= meal.fat %>"
+                        name="exerciseThree">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Zutat 1</label>
+                    <input type="text" maxlength="255" class="form-control" size="40" value="<%= meal.ingredientOne %>"
+                        name="exerciseThree">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Zutat 2</label>
+                    <input type="text" maxlength="255" class="form-control" size="40" value="<%= meal.ingredientTwo %>"
+                        name="exerciseThree">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Zutat 3</label>
+                    <input type="text" maxlength="255" class="form-control" size="40"
+                        value="<%= meal.ingredientThree %>" name="exerciseThree">
+                </div>
+            </div>
+            <br></br>
+            <input class="btn btn-dark btn-lg active" type="submit" value="Aktualisieren">
+
+        </form>
+    </div>
+</div>

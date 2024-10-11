@@ -1,0 +1,70 @@
+<div class="container">
+    <h1>
+        Fitnessplan "<%= fitnessplan.name %>"anzeigen
+    </h1>
+
+
+    <div class="card w-100 mt-4">
+        <div>
+            <div class="row">
+                <div class="col-2">
+                    Name
+                </div>
+                <div class="col-10">
+                    <%= fitnessplan.name %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Anzahl der Übungen
+                </div>
+                <div class="col-10">
+                    <%= fitnessplan.amountExercises %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Beschreibung
+                </div>
+                <div class="col-10">
+                    <%= fitnessplan.description %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Übung 1
+                </div>
+                <div class="col-10">
+                    <%= fitnessplan.exerciseOne %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Übung 2
+                </div>
+                <div class="col-10">
+                    <%= fitnessplan.exerciseTwo %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Übung 3
+                </div>
+                <div class="col-10">
+                    <%= fitnessplan.exerciseThree %>
+                </div>
+            </div>
+
+            <% if(fitnessplan.category) { %>
+                <div class="row">
+                    <div class="col-2">
+                        Kategorie
+                    </div>
+                    <div class="col-10">
+                        <%= fitnessplan.category.name %>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</div>

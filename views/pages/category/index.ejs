@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Kategorien</h1>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-dark">
+            <a href="/fitnessplan/" class="btn btn-dark btn-lg active" role="button"
+                aria-pressed="true">Fitnesspläne</a>
+            <a href="/fitnessplan/newfitnessplan" class="btn btn-dark btn-lg active" role="button"
+                aria-pressed="true">Fitnessplan erstellen</a>
+            <a href="/category" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien
+                verwalten</a>
+        </div>
+
+    </div>
+
+    <div class="item-content">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+            </thead>
+            <tbody>
+                <% categories.forEach(function(category){ %>
+                    <tr>
+                        <td>
+                            <%= category.name %>
+                        </td>
+                        <td>
+                            <a href="/category/<%= category.id %>/destroy">Löschen</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+
+        <a class="green-button mt-4" href="/category/new">Hinzufügen</a>
+    </div>
+</div>
+</div>

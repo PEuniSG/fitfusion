@@ -1,0 +1,42 @@
+<div class="container">
+
+    <h1>Mahlzeiten</h1>
+    <div class="col"><strong> Dein täglicher Kalorienbedarf beträgt <%= Math.round(req.me.calorieRequirement )%> kcal am
+                Tag</strong></div>
+
+
+
+    <div>
+        <table class="table">
+            <tbody>
+                <% categoriesMeal.forEach(function(categoryMeal){ %>
+                    <tr>
+                        <td colspan="3" class="h4">
+                            <BR>
+                            <%= categoryMeal.name %>
+                        </td>
+                    </tr>
+                    <% if (categoryMeal.meals) { %>
+                        <% categoryMeal.meals.forEach(function(overviewMeal){ %>
+                            <tr>
+                                <td class="h6">
+                                    <strong>
+                                        <%= overviewMeal.name %>
+                                    </strong><BR>
+                                    <span class="h7">
+                                        <%= overviewMeal.description %>
+                                    </span>
+                                </td>
+                                <td class="h6">
+                                    <a class="btn btn-outline-dark" href="/meal/<%= overviewMeal.id %>">anzeigen</a>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <% } %>
+                                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>

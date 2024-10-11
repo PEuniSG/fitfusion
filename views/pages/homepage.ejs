@@ -1,0 +1,110 @@
+<div class="hero" style="background-image: url(images/homepageImg.jpg);">
+    <% if(req.me) { %>
+        <h1>Willkommen!</h1>
+        <h1>
+            <%= req.me.fullName %>
+        </h1>
+
+        <% } else { %>
+
+
+            <h1>Willkommen bei FitFusion</h1>
+            <h2>Dein Weg zu einem gesünderem Leben</h2>
+            <br>
+            <br>
+            <p>Deine Plattform für Gesundheit und Fitness</p>
+
+
+            <a href="/signup" class="cta-button">Jetzt kostenlos registrieren</a>
+            <% } %>
+
+</div>
+
+<div class="flex_einfliegen" id="trainingsplan" data-target="/fitnessplanOverview">
+    <img srcset="images/trainingsplan_bild_klein.jpg,
+        images/trainingsplan_bild.jpeg" sizes="(max-width: 768px) 768px,
+        (max-width: 1024px) 1024px" src="images/trainingsplan_bild.jpeg" alt="Fitnessplan">
+
+
+    <div class="text_einfliegen">
+        <h1>Unser Angebot</h1>
+        <br>
+        <br>
+        <h2>Fitnessplan</h2>
+        <br>
+        Unsere Webseite bietet Zugang zu einer Vielzahl maßgeschneiderter Trainingspläne, die von führenden
+        Experten und Fitnessprofis zusammengestellt wurden. Entdecken Sie gezielte Übungen, die auf Ihre individuellen
+        Fitnessziele abgestimmt sind. Diese Pläne bieten nicht nur eine breite Palette an Übungen, sondern auch
+        wertvolle
+        Einblicke und professionelle Empfehlungen, um Ihre Fitnessreise zu unterstützen. Tauchen Sie ein, erkunden Sie
+        die
+        Vielfalt und finden Sie die passenden Übungen, um Ihre Fitnessziele zu erreichen und Ihre körperliche
+        Leistungsfähigkeit
+        zu steigern.
+    </div>
+</div>
+
+<div class="flex_einfliegen" id="community" data-target="/mealOverview">
+    
+
+    <img srcset="images/mealImg_klein.jpg,
+    images/mealImg.jpg" sizes="(max-width: 768px) 768px,
+    (max-width: 1024px) 1024px" src="images/mealImg.jpg" alt="meal">
+    <div class="text_einfliegen">
+        <h2>Gesunde Mahlzeiten</h2>
+        <br>
+        Gesundes Essen ist essentiell für die Gesundheit. Eine ausgewogene Ernährung liefert wichtige Nährstoffe, stärkt
+        das Immunsystem, unterstützt die Verdauung und hilft, ein gesundes Körpergewicht zu halten. Sie spielt eine
+        Schlüsselrolle bei der Vorbeugung von ernährungsbedingten Krankheiten und beeinflusst positiv die kognitive
+        Funktion und emotionale Gesundheit. Kurz gesagt, die bewusste Auswahl von gesunden Lebensmitteln ist ein
+        grundlegender Beitrag zu einem vitalen und erfüllten Leben.
+        Entdecken Sie auf unserer Webseite gesunde Mahlzeiten, perfekt auf Ihre Fitnessziele abgestimmt.
+        Mit klaren Nährwertangaben zu Fett, Protein und Kalorien helfen wir Ihnen, bewusste Ernährungsentscheidungen
+        zu treffen. Finden Sie köstliche Optionen für Muskelaufbau, Gewichtsabnahme und allgemeine Fitness. Starten
+        Sie jetzt Ihre Reise zu einem gesunden Lebensstil!
+    </div>
+</div>
+
+<div class="flex_einfliegen" id="caloriesCalculator" data-target="/caloriesCalculator">
+    
+
+    <img srcset="images/bmiBerechnenImg_klein.jpg,
+    images/bmiBerechnenImg.jpeg" sizes="(max-width: 768px) 768px,
+    (max-width: 1024px) 1024px" src="images/bmiBerechnenImg.jpeg" alt="meal">
+
+    <div class="text_einfliegen">
+        <h2>Berechne deinen Kalorienbedarf</h2>
+        <br>
+        Auf unserer Webseite bieten wir Ihnen die Möglichkeit, mithilfe einiger persönlicher Angaben Ihren individuellen
+        Kalorienbedarf zu ermitteln. Dieser Wert ist entscheidend, um Ihre Ernährung optimal zu gestalten, Ihr Gewicht
+        zu
+        managen und Ihre Fitnessziele zu unterstützen. Durch die Angabe von Geschlecht, Alter, Gewicht und
+        Aktivitätsniveau
+        erhalten Sie eine Schätzung Ihrer täglichen Kalorienzufuhr, die Ihnen dabei hilft, bewusste Entscheidungen über
+        Ihre
+        Ernährung zu treffen. Die Kenntnis Ihres Kalorienbedarfs ist unverzichtbar, egal ob Sie abnehmen, Muskelmasse
+        aufbauen
+        oder einfach Ihre Gesundheit verbessern möchten. Es ermöglicht Ihnen, Ihre Ernährung gezielt anzupassen und
+        sicherzustellen, dass Sie die notwendige Energie für Ihren Lebensstil erhalten. Dadurch können Sie Ihre Ziele
+        effektiver
+        verfolgen und an einem gesünderen und ausgewogeneren Lebensstil arbeiten.
+    </div>
+</div>
+
+<div class="flex_einfliegen" id="ourService" data-target="/#ourService">
+
+    <img srcset="images/ueberunsImg_klein.jpg,
+    images/ueberunsImg.jpg" sizes="(max-width: 768px) 768px,
+    (max-width: 1024px) 1024px" src="images/ueberunsImg.jpg" alt="meal">
+    
+    <div class="text_einfliegen">
+        <h2>Über uns</h2>
+        <br>
+        Bei FitFusion streben wir danach, einen gesunden und glücklichen Lebensstil durch Sport für alle zugänglich
+        zu machen. Unser Ziel ist es, Menschen dabei zu unterstützen, ein aktiveres Leben zu führen und die Freude an
+        einer gesunden Lebensweise zu entdecken. Wir sind davon überzeugt, dass jeder die Möglichkeit haben sollte,
+        seine Fitnessziele zu erreichen und einen positiven Einfluss auf sein Wohlbefinden zu erlangen. Unser Engagement
+        liegt darin, Ressourcen, Informationen und Motivation bereitzustellen, um Sie auf Ihrer Fitnessreise zu
+        unterstützen.
+    </div>
+</div>

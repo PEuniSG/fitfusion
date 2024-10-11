@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FitFusion - Dein Weg zu einem gesünderem Leben</title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <% /* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+    <% /* <meta name="robots" content="noindex"> */%>
+
+
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <!--STYLES-->
+      <link rel="stylesheet" href="/styles/importer.css">
+      <link rel="stylesheet" href="/styles/layoutStyle.css">
+      <link rel="stylesheet" href="/styles/pages.css">
+      <!--STYLES END-->
+</head>
+
+<body>
+  <!--SCRIPTS-->
+  <script src="/dependencies/sails.io.js"></script>
+  <script src="/dependencies/vue.global.js"></script>
+  <script src="/js/calculateCalories.js"></script>
+  <script src="/js/refsToServices.js"></script>
+  <script src="/js/slideEffect.js"></script>
+  <script src="/js/validateForms.js"></script>
+  <!--SCRIPTS END-->
+
+
+
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo_transparent_startseite.png" alt="Fitfusion Logo" width="70em">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <form action="/#trainingsplan">
+              <button class="nav-link" type="submit">Unser Angebot</button>
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/caloriesCalculator">Kalorienrechner</a>
+          </li>
+          <% if(req.me) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/fitnessplanOverview">Fitnessplan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mealOverview">Mahlzeiten</a>
+            </li>
+
+            <li class="nav-item">
+              <form action="/#ourService">
+                <button class="nav-link" type="submit">Über Uns</button>
+              </form>
+            </li>
+            <% if(req.me.isSuperAdmin) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin">Adminoberfläche</a>
+              </li>
+              <% } %>
+                <% } else { %>
+                  <li class="nav-item">
+                    <form action="/#ourService">
+                      <button class="nav-link" type="submit">Über Uns</button>
+                    </form>
+                  </li>
+                  <li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login">Anmelden</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link registrierenButton" href="signup">Registrieren</a>
+                  </li>
+                  </li>
+        </ul>
+        <% } %>
+      </div>
+      <% if(req.me) { %>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="header-account-menu-link">
+            <a class="dropdown-item" href="/account">Profil</a>
+            <a class="dropdown-item" href="/logout">Ausloggen</a>
+          </div>
+          <% } %>
+        </div>
+    </div>
+  </nav>
+  </header>
+
+  <%- body %>
+
+    <footer class="footer-container">
+      <div class="footer-item">
+        FitFusion<BR>
+        Hauptsitz in Konstanz 78467<BR>
+        <p class="kontakt">
+          Telefon 0049 172 3111463<BR>
+          fitfusion@be-healthy.de<BR>
+        </p>
+      </div>
+      <div class="footer-item">
+        <ul>
+          <li>
+            <a class="nav-link" href="/impressum">Impressum</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/datenschutz">Datenschutz</a>
+
+          </li>
+          <li>&copy; 2023 Fitfusion - Alle Rechte vorbehalten</li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

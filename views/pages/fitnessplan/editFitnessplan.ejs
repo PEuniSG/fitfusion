@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="d-flex p-2 bd-highlight">
+        <h1>Fitnessplan bearbeiten</h1>
+    </div>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-dark">
+            <a href="/fitnessplan" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Fitnesspläne</a>
+            <a href="/fitnessplan/newFitnessplan" class="btn btn-dark btn-lg active" role="button"
+                aria-pressed="true">Fitnessplan erstellen</a>
+            <a href="/category" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien
+                verwalten</a>
+        </div>
+
+    </div>
+    <div>
+        <form action="/fitnessplan/<%=fitnessplan.id%>/update" method="post">
+            <div>
+                <div class="form-group">
+                    <label class="col-form-label-lg required">Name</label>
+                    <input type="text" class="form-control" maxlength="80" value="<%= fitnessplan.name %>" name="name">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg required">Anzahl Übungen</label>
+                    <select class="form-control" id="anzahlÜbungen" name="amountExercises">
+                        <option value="<%= fitnessplan.amountExercises %>">
+                            <%= fitnessplan.amountExercises %>
+                        </option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg required">Beschreibung</label>
+                    <input type="text" maxlength="255" class="form-control" size="40"
+                        value="<%= fitnessplan.description %>" name="description">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg required">Übung 1</label>
+                    <input type="text" maxlength="255" class="form-control" size="40"
+                        value="<%= fitnessplan.exerciseOne %>" name="exerciseOne">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Übung 2</label>
+                    <input type="text" maxlength="255" class="form-control" size="40"
+                        value="<%= fitnessplan.exerciseTwo %>" name="exerciseTwo">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label-lg">Übung 3</label>
+                    <input type="text" maxlength="255" class="form-control" size="40"
+                        value="<%= fitnessplan.exerciseThree %>" name="exerciseThree">
+                </div>
+            </div>
+            <br></br>
+            <input class="btn btn-dark btn-lg active" type="submit" value="Aktualisieren">
+
+        </form>
+    </div>
+</div>

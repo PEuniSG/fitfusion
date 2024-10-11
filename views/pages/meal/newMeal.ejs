@@ -1,0 +1,72 @@
+<div class="container">
+
+    <div class="d-flex p-2 bd-highlight">
+        <h1>Mahlzeit erstellen</h1>
+    </div>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-dark">
+            <a href="/meal/" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Mahlzeiten</a>
+            <a href="/meal/newMeal" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Mahlzeiten
+                erstellen</a>
+            <a href="/categoryMeal" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Kategorien
+                verwalten</a>
+        </div>
+
+    </div>
+
+    <div>
+        <form action="/meal" id="mealForm" method="post" onsubmit="return validateMealForm()">
+
+            <div class="form-group">
+                <label class="col-form-label-lg required">Name</label>
+                <input type="text" class="form-control" maxlength="80" name="name">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Beschreibung</label>
+                <input type="text" maxlength="255" class="form-control" name="description">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Protein</label>
+                <input type="number" class="form-control" maxlength="80" name="protein">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Kalorien</label>
+                <input type="number" class="form-control" maxlength="80" name="calories">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Fett</label>
+                <input type="number" class="form-control" maxlength="80" name="fat">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label-lg required">Zutat 1</label>
+                <input type="text" class="form-control" maxlength="80" name="ingredientOne">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Zutat 2</label>
+                <input type="text" maxlength="255" class="form-control" name="ingredientTwo">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Zutat 3</label>
+                <input type="text" maxlength="255" class="form-control" name="ingredientThree">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg required">Kategorie</label>
+                <select class="form-control" name="categoryMeal">
+                    <% categoriesMeal.forEach(function(categoryMeal){ %>
+                        <option value="<%= categoryMeal.id %>">
+                            <%= categoryMeal.name %>
+                        </option>
+                        <% }); %>
+                </select>
+            </div>
+            <br>
+            <div>
+                <input class="btn btn-dark btn-lg active" type="submit" value="Hinzufügen">
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>

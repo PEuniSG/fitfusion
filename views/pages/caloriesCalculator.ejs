@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Kalorienbedarf Rechner</h1>
+    <form id="formCalculateCalories">
+        <div class="form-group">
+            <label id="required">Geschlecht</label>
+            <select class="form-control" id="gender">
+                <option value="male">Männlich</option>
+                <option value="female">Weiblich</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label id="required">Alter</label>
+            <input type="number" class="form-control" id="age">
+        </div>
+        <div class="form-group">
+            <label id="required">Gewicht (in kg)</label>
+            <input type="number" class="form-control" id="weight">
+        </div>
+        <div class="form-group">
+            <label id="required">Aktivitätslevel</label>
+            <select class="form-control" id="activityLevel">
+                <option value="sedentary">Sitzend (keine Sportaktivität)</option>
+                <option value="lightlyActive">Leicht aktiv (leichte Bewegung oder Sport 1-3 Tage/Woche)</option>
+                <option value="moderatelyActive">Mäßig aktiv (Sport 3-5 Tage/Woche)</option>
+                <option value="veryActive">Sehr aktiv (Sport 6-7 Tage/Woche)</option>
+                <option value="superActive">Extrem aktiv (schweres Training oder körperliche Arbeit)</option>
+            </select>
+        </div>
+        <br>
+        <input class="btn btn-dark btn active" onclick="calculateCalories()" value="Berechnen">
+    </form>
+    <div class="mt-3">
+        <p id="result"></p>
+        <input type="hidden" id="caloriesValue">
+    </div>
+    <br>
+    <% if(req.me) { %>
+
+        <button class="btn btn-dark btn active" onclick="handleSaveCalories()" type="text">Mein Kalorienbedarf
+            speichern</button>
+        <br>
+        <div id="savedMessage" style="display: none;">
+            <p></p>
+        </div>
+        <% } %>
+
+</div>
+
+
+</div>

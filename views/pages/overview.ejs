@@ -1,0 +1,41 @@
+<div class="container">
+
+    <h1>Fitnesspläne</h1>
+
+    <div>
+        <table class="table">
+            <tbody>
+                <% categories.forEach(function(category){ %>
+                    <tr>
+                        <td colspan="3" class="h4">
+                            <BR>
+                            <%= category.name %>
+                        </td>
+                    </tr>
+                    <% if (category.fitnessplans) { %>
+                        <% category.fitnessplans.forEach(function(overview){ %>
+                            <tr>
+                                <td class="h6">
+                                    <strong>
+                                        <%= overview.name %>
+                                    </strong><BR>
+                                    <span class="h7">
+                                        <%= overview.description %>
+                                    </span>
+                                </td>
+                                <td class="h6">
+                                    enthält <%= overview.amountExercises %> Übungen
+                                </td>
+                                <td class="h6">
+                                    <a class="btn btn-outline-dark" href="/fitnessplan/<%= overview.id %>">anzeigen</a>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <% } %>
+                                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
