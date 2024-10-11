@@ -1,0 +1,209 @@
+/* Allgemeine Formatierung */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+body {
+  background-image: url('background_fixed.webp');
+  /* Pfad zum Hintergrundbild */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+}
+/* Logo-Stil */
+.logo img {
+  width: 4em;
+  /* Hier die gewünschte Breite des Logos */
+  height: auto;
+  /* Das Seitenverhältnis beibehalten */
+  display: block;
+  /* Damit die Margin 'auto' funktioniert */
+  margin-left: 4em;
+}
+/* Header-Stil */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+header h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+}
+/* Navigationslinks */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+nav a {
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #ff5722;
+}
+/* Hero-Bereich-Stil */
+.hero {
+  padding-top: 20em;
+  height: 50vh;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 48px;
+  color: black;
+}
+.hero p {
+  font-size: 18px;
+  color: black;
+}
+/* CTA-Button-Stil */
+.cta-button {
+  background-color: #ff5722;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.cta-button:hover {
+  background-color: #d84315;
+}
+/* Über Uns-Stil */
+.about {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 60px 0;
+}
+.about h2 {
+  font-size: 36px;
+}
+.about p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+/* Footer-Stil */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+.hero .background_fixed .about {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.search-box {
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 3em;
+  border: 1px solid #ccc;
+}
+.background_fixed {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  background-color: #333;
+}
+.background_fixed h2 {
+  font-size: 1.5em;
+}
+.background_fixed p {
+  margin: 2em;
+}
+.search-block {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.bild_gesund_leben img {
+  width: 40em;
+}
+.Text_homepage {
+  color: orange;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.unser_Service h2 {
+  font-size: 4em;
+}
+.test {
+  margin-top: 5em;
+}
+/* Stil für das Formular */
+.registration-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+/* Stil für Labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* Stil für Formulareingaben */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 25em;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* Stil für Submit-Button */
+input[type="submit"] {
+  width: 15em;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff5722;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+  background-color: #d84315;
+}
+/*
+/* Responsive-Design für Mobile 
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    nav ul li {
+        //display: block;
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+*/

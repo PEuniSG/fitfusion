@@ -1,0 +1,17 @@
+.container{
+    margin-top: 4em;
+    margin-bottom: 10em;
+}
+
+#required::after{
+    content:"*";
+    color: red;
+
+
+}
+.required::after{
+    content:"*";
+    color: red;
+
+
+}
